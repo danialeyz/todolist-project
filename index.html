@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>todo list project</title>
+
+    <!-- github : danialeyz 
+    telegram : @itsdanialey
+    email : danialeyvaziiii@gmail.com -->
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="todo-inputs">
+        <h1>To Do list</h1>
+        <input type="text" class="text-input" placeholder="Add new tasks" />
+        <div class="add-search">
+          <select name="todo" class="select">
+            <option class="option" value="all">all</option>
+            <option class="option" value="completed">completed</option>
+            <option class="option" value="uncompleted">Uncompleted</option>
+          </select>
+
+          <input
+            type="button"
+            class="add-button"
+            value="ADD"
+            class="add-button"
+          />
+        </div>
+      </header>
+      <ul class="tasks-list"></ul>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
