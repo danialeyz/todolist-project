@@ -10,7 +10,7 @@ addButton.addEventListener("click", add);
 filterOption.addEventListener("click", filter);
 document.addEventListener("DOMContentLoaded", getItemsLocal);
 
-//add function
+//add todo list items function
 function add(item) {
   item.preventDefault();
   //adding new elements to DOM
@@ -41,7 +41,7 @@ function add(item) {
   todoText.value = "";
 }
 
-// Remove and completed function
+// Remove item and completed items function
 function removeComplete(e) {
   const className = [...e.target.classList];
   const item = e.target;
@@ -57,7 +57,7 @@ function removeComplete(e) {
   } // complete
 }
 
-//filter function
+//filter option function
 function filter(e) {
   // console.log(listContainer.childNodes);
   const todoChilds = [...listContainer.childNodes];
@@ -90,8 +90,9 @@ function filter(e) {
   });
 }
 
-//local storage settings
-//save items
+//local storage settings functions
+
+//save items to local storage
 function saveItemsLocal(todo) {
   let savedTodos = localStorage.getItem("todos")
     ? JSON.parse(localStorage.getItem("todos"))
@@ -132,6 +133,7 @@ function getItemsLocal(todo) {
     listContainer.appendChild(newLi);
   });
 }
+
 //for removing removed items from local storage
 function removeItemsLocal(parent) {
   let savedTodos = localStorage.getItem("todos")
