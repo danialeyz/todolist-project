@@ -1,37 +1,33 @@
+/* google fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+
 /* assets */
 :root {
-  --maincolor: red;
+  --maincolor: #7c3aed;
   --textcolor: rgb(255, 255, 255);
   --primarycolor: black;
-  --items-color: #e3e2e3;
-  --items-hover: #7c7c7cde;
+  --items-color: #ffffff;
+  --items-hover: #dbdbdbde;
   --completed: #595959c4;
-  --main-font: "Courier New", Courier, monospace;
+  --main-font: "Poppins", sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 10% 1fr 10%;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
   font-family: var(--main-font);
 }
 
-.main-container {
-  grid-column: 2;
-  align-self: center;
+section {
+  margin-left: auto !important;
+  margin-right: auto !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: initial;
-}
-@media screen and (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr;
-  }
-
-  .main-container {
-    grid-column: 1;
-  }
+  width: 70vw;
 }
 
 /* header */
@@ -43,23 +39,34 @@ body {
   flex-direction: column;
   align-items: center;
   color: var(--textcolor);
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  margin: 10px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+  box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 .text-input {
-  width: 95%;
-  height: 30px;
+  width: 85%;
+  height: 40px;
   outline: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 10px;
   padding-inline-start: 10px;
+  font-family: var(--main-font);
 }
 
 /* !text input placeholder */
 .text-input::placeholder {
   font-family: var(--main-font);
   font-size: medium;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .add-button {
@@ -100,6 +107,7 @@ body {
 .tasks-list {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: 0%;
   width: 100%;
   list-style: none;
@@ -115,11 +123,19 @@ body {
   height: 50px;
   background-color: var(--items-color);
   padding-left: 30px;
-  font-weight: 200;
   transition: 300ms ease-in;
+  border-radius: 10px;
+  margin: 10px;
+  width: calc(100% - 50px);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(107, 33, 168, 0.59);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(107, 33, 168, 0.59);
+  box-shadow: 0px 0px 10px 2px rgba(107, 33, 168, 0.59);
+  overflow: hidden;
 }
 .list-item h4 {
   margin-left: 0%;
+  font-family: var(--main-font);
+  font-weight: 200;
 }
 .list-item button {
   justify-self: flex-end !important;
@@ -127,7 +143,7 @@ body {
 
 .list-item:hover {
   background-color: var(--items-hover);
-  color: var(--items-color);
+  color: var(--black);
   cursor: pointer;
   transition: 100ms ease-in-out;
 }
@@ -137,6 +153,7 @@ body {
   width: 50px;
   height: 100%;
   border: none;
+  border: 10px;
   background-color: #7c7c7c00;
   transition: 50ms ease-in-out;
 }
@@ -147,6 +164,9 @@ body {
 
 .trash:hover {
   background-color: var(--maincolor);
+  border: 10px;
+  color: var(--items-color);
+  cursor: pointer;
 }
 
 .trash:hover .bi {
@@ -193,5 +213,74 @@ body {
     -webkit-transform: translateZ(600px);
     transform: translateZ(600px);
     opacity: 0;
+  }
+}
+
+/* =========== media queries =========  */
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 100vw;
+    padding-inline: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* header */
+  .todo-inputs {
+    padding-bottom: 20px;
+    margin: 10px 0px;
+    border-radius: 22px;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+    box-shadow: 0px 0px 10px 5px rgba(141, 20, 254, 0.57);
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .text-input {
+    width: 85%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding-inline-start: 10px;
+    font-family: var(--main-font);
+  }
+
+  /* !text input placeholder */
+  .text-input::placeholder {
+    font-size: 0.9rem;
+  }
+
+  .add-button {
+    margin-top: 12px !important;
+    width: 70% !important;
+    height: 35px !important;
+    font-size: large;
+    font-weight: 200;
+    border-radius: 10px !important;
+    border: solid var(--textcolor) 1px;
+  }
+
+  .add-search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0px;
+  }
+
+  .select {
+    width: 70%;
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .list-item {
+    font-size: 0.85rem;
   }
 }
