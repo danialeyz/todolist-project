@@ -74,6 +74,7 @@ h1 {
   background-color: var(--maincolor);
   border: none;
   width: 20%;
+  min-width: 140px;
   height: 30px;
   color: var(--textcolor);
   font-size: large;
