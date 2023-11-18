@@ -60,6 +60,7 @@ h1 {
   border-radius: 10px;
   padding-inline-start: 10px;
   font-family: var(--main-font);
+  text-transform: capitalize;
 }
 
 /* !text input placeholder */
@@ -79,6 +80,7 @@ h1 {
   color: var(--textcolor);
   font-size: large;
   font-weight: 200;
+  cursor: pointer;
 }
 
 .add-button:hover {
@@ -97,12 +99,17 @@ h1 {
 .select {
   outline: none;
   border: none;
-  width: 15%;
+  width: 12%;
   height: 25px;
   margin-top: 20px;
   border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
-
+.select option{
+    font-size: .9rem;
+    font-weight: 500;
+}
 /*ITEMS*/
 
 .tasks-list {
